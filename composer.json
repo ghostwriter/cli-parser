@@ -1,11 +1,11 @@
 {
-    "name": "ghostwriter/wip",
-    "description": "Here be dragons",
+    "name": "ghostwriter/cli-parser",
+    "description": "Command line arguments and options parser.",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
         "ghostwriter",
-        "wip"
+        "cli-parser"
     ],
     "authors": [
         {
@@ -15,12 +15,12 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/ghostwriter/wip",
+    "homepage": "https://github.com/ghostwriter/cli-parser",
     "support": {
-        "issues": "https://github.com/ghostwriter/wip/issues",
-        "source": "https://github.com/ghostwriter/wip",
-        "rss": "https://github.com/ghostwriter/wip/releases.atom",
-        "security": "https://github.com/ghostwriter/wip/security/advisories/new"
+        "issues": "https://github.com/ghostwriter/cli-parser/issues",
+        "source": "https://github.com/ghostwriter/cli-parser",
+        "rss": "https://github.com/ghostwriter/cli-parser/releases.atom",
+        "security": "https://github.com/ghostwriter/cli-parser/security/advisories/new"
     },
     "funding": [
         {
@@ -72,12 +72,8 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Ghostwriter\\Wip\\": "src"
-        },
-        "files": [
-            "src/constants.php",
-            "src/functions.php"
-        ]
+            "Ghostwriter\\CliParser\\": "src"
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -90,10 +86,6 @@
             "/tests/"
         ]
     },
-    "bin": [
-        "bin/console",
-        "bin/console.php"
-    ],
     "config": {
         "allow-plugins": {
             "ghostwriter/coding-standard": true
@@ -133,12 +125,14 @@
     "extra": {
         "ghostwriter": {
             "container": {
-                "definition": "Ghostwriter\\Wip\\Container\\WipDefinition"
+                "provider": [
+                    "Ghostwriter\\CliParser\\Container\\CliParserProvider"
+                ]
             }
         },
         "thanks": {
-            "name": "ghostwriter/wip",
-            "url": "https://github.com/ghostwriter/wip"
+            "name": "ghostwriter/cli-parser",
+            "url": "https://github.com/ghostwriter/cli-parser"
         }
     },
     "scripts": {
